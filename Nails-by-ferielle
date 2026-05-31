@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nails by Feriel - Onglerie Tunisie</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #faf6f1;
+            color: #2c2c2c;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 246, 241, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            padding: 12px 20px;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #8b7355;
+            text-decoration: none;
+        }
+
+        .logo span { color: #d4a5a5; font-style: italic; }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #8b7355;
+            font-weight: 500;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .insta-nav {
+            background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+            color: white !important;
+            padding: 8px 18px;
+            border-radius: 25px;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5em;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hero {
+            margin-top: 60px;
+            background: linear-gradient(135deg, #faf6f1 0%, #f0e6d3 50%, #e8b4b8 100%);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            color: #8b7355;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span { color: #d4a5a5; font-style: italic; }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .btn-primary {
+            background: #8b7355;
+            color: white;
+            box-shadow: 0 10px 30px rgba(139, 115, 85, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #d4a5a5;
+            transform: translateY(-3px);
+        }
+
+        .btn-insta {
+            background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+            color: white;
+            box-shadow: 0 10px 30px rgba(220, 39, 67, 0.3);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            font-size: 1.1em;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128c7e;
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5em;
+            color: #8b7355;
+            margin-bottom: 10px;
+        }
+
+        .section-header h2 span { color: #d4a5a5; font-style: italic; }
+
+        .section-header p { color: #888; font-size: 1.1em; }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            border: 1px solid #f0e6d3;
+        }
+
+        .service-card:hover { transform: translateY(-10px); }
+
+        .service-img {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #e8b4b8, #d4a5a5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+        }
+
+        .service-content { padding: 25px; }
+
+        .service-content h3 {
+            color: #8b7355;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .service-content p {
+            color: #777;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .service-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #f0e6d3;
+        }
+
+        .price {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #d4a5a5;
+        }
+
+        .price span { font-size: 0.7em; color: #999; }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img { transform: scale(1.1); }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay { transform: translateY(0); }
+
+        .insta-section {
+            background: linear-gradient(135deg, #faf6f1 0%, #f0e6d3 100%);
+            text-align: center;
+        }
+
+        .insta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 40px 0;
+        }
+
+        .insta-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .insta-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .insta-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(220, 39, 67, 0.8);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .rdv-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .rdv-form {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            border: 1px solid #f0e6d3;
+        }
+
+        .rdv-form h3 {
+            color: #8b7355;
+            font-size: 1.5em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .form-group { margin-bottom: 20px; }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #8b7355;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #f0e6d3;
+            border-radius: 10px;
+            font-size: 1em;
+            font-family: inherit;
+            color: #2c2c2c;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #c9a961;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .calendrier-container { margin-bottom: 20px; }
+
+        .calendrier-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .calendrier-header h4 { color: #8b7355; }
+
+        .cal-nav {
+            display: flex;
+            gap: 10px;
+        }
+
+        .cal-nav button {
+            background: #c9a961;
+            color: white;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        .calendrier-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .cal-jour-label {
+            text-align: center;
+            font-size: 0.75em;
+            color: #999;
+            font-weight: bold;
+            padding: 5px;
+        }
+
+        .cal-jour {
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #f0e6d3;
+            border-radius: 10px;
+            cursor: pointer;
+            background: white;
+            font-size: 0.85em;
+            transition: all 0.3s;
+        }
+
+        .cal-jour:hover {
+            border-color: #c9a961;
+            transform: scale(1.05);
+        }
+
+        .cal-jour.active {
+            background: #8b7355;
+            border-color: #8b7355;
+            color: white;
+        }
+
+        .cal-jour.ferme {
+            background: #f5f5f5;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .cal-jour .jour-num { font-weight: bold; }
+        .cal-jour .jour-nom { font-size: 0.7em; }
+
+        .heures-dispo {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .heure-btn {
+            padding: 10px;
+            border: 2px solid #f0e6d3;
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+            text-align: center;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .heure-btn:hover {
+            border-color: #c9a961;
+            background: #faf6f1;
+        }
+
+        .heure-btn.active {
+            background: #c9a961;
+            color: white;
+            border-color: #c9a961;
+        }
+
+        .heure-btn.reserved {
+            background: #e74c3c;
+            color: white;
+            border-color: #e74c3c;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .whatsapp-section {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+
+        .whatsapp-section.active { display: block; }
+
+        .whatsapp-section h4 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .whatsapp-section p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .btn-whatsapp-large {
+            display: inline-block;
+            padding: 18px 40px;
+            background: white;
+            color: #25d366;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-whatsapp-large:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .recap-text {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 0.9em;
+            text-align: left;
+            white-space: pre-line;
+        }
+
+        .rdv-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid #f0e6d3;
+        }
+
+        .info-card h4 {
+            color: #8b7355;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-card h4 span { font-size: 1.3em; }
+
+        .horaires-tunisien {
+            background: linear-gradient(135deg, #8b7355 0%, #6b5b45 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 20px;
+        }
+
+        .horaires-tunisien h4 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #f0e6d3;
+        }
+
+        .horaire-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .horaire-item:last-child { border-bottom: none; }
+
+        .horaire-item .ferme { color: #ff9999; }
+
+        .contact-section {
+            background: #2c2c2c;
+            color: white;
+            padding: 80px 20px;
+        }
+
+        .contact-section h2 { color: #f0e6d3; }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(201, 169, 97, 0.2);
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: #c9a961;
+        }
+
+        .contact-icon { font-size: 2.5em; margin-bottom: 15px; }
+
+        .contact-card h3 {
+            color: #c9a961;
+            margin-bottom: 10px;
+        }
+
+        .contact-card a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        .contact-card a:hover { color: #e8b4b8; }
+
+        .whatsapp-card { border-color: rgba(37, 211, 102, 0.3); }
+        .insta-card { border-color: rgba(220, 39, 67, 0.3); }
+
+        footer {
+            background: #1a1a1a;
+            color: #777;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer a { color: #c9a961; text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #faf6f1;
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
+
+            .hero h1 { font-size: 2em; }
+            .hero p { font-size: 1em; }
+
+            .rdv-container { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .heures-dispo { grid-template-columns: repeat(3, 1fr); }
+            .services-grid { grid-template-columns: 1fr; }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+# Partie 2 - Le contenu HTML
+partie2 = '''
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Nails by <span>Feriel</span></a>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#rendez-vous">RDV</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://www.instagram.com/espace_beauty_by_dadou" target="_blank" class="insta-nav">📷 Instagram</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="accueil">
+        <div>
+            <div style="display:inline-block;background:#c9a961;color:white;padding:8px 20px;border-radius:30px;font-size:0.9em;margin-bottom:20px;">✨ Onglerie Professionnelle</div>
+            <h1>Nails by <span>Feriel</span></h1>
+            <p>Sublimez vos mains avec des prestations sur mesure. Gel, vernis permanent, nail art & plus encore.</p>
+            <div>
+                <a href="#rendez-vous" class="btn btn-primary">📅 Prendre Rendez-vous</a>
+                <a href="https://www.instagram.com/espace_beauty_by_dadou" target="_blank" class="btn btn-insta">📷 Voir Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+        <div class="section-header">
+            <h2>Nos Services & <span>Tarifs</span></h2>
+            <p>Des soins professionnels à prix tunisien</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-img">💅</div>
+                <div class="service-content">
+                    <h3>Gel Capsule + VP</h3>
+                    <p>Extension complète avec capsules et vernis permanent</p>
+                    <div class="service-footer">
+                        <div class="price">35 <span>DT</span></div>
+                        <div style="color:#c9a961;">~1h30</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-img">✨</div>
+                <div class="service-content">
+                    <h3>Gel + Vernis Permanent</h3>
+                    <p>Renforcement gel sur ongle naturel avec VP</p>
+                    <div class="service-footer">
+                        <div class="price">25 <span>DT</span></div>
+                        <div style="color:#c9a961;">~1h</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-img">🦶</div>
+                <div class="service-content">
+                    <h3>Capsule + VP</h3>
+                    <p>Pose de capsules avec vernis permanent classique</p>
+                    <div class="service-footer">
+                        <div class="price">25 <span>DT</span></div>
+                        <div style="color:#c9a961;">~1h15</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-img">💎</div>
+                <div class="service-content">
+                    <h3>VP Mains</h3>
+                    <p>Manucure complète avec vernis semi-permanent</p>
+                    <div class="service-footer">
+                        <div class="price">20 <span>DT</span></div>
+                        <div style="color:#c9a961;">~45min</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-img">🌸</div>
+                <div class="service-content">
+                    <h3>VP Pieds</h3>
+                    <p>Pédicure avec vernis permanent</p>
+                    <div class="service-footer">
+                        <div class="price">25 <span>DT</span></div>
+                        <div style="color:#c9a961;">~1h</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-img">🎨</div>
+                <div class="service-content">
+                    <h3>Nail Art & Motifs</h3>
+                    <p>Designs personnalisés : strass, cat eye, french...</p>
+                    <div class="service-footer">
+                        <div class="price">2-12 <span>DT</span></div>
+                        <div style="color:#c9a961;">Selon motif</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie -->
+    <section id="galerie" style="background:linear-gradient(180deg,#faf6f1 0%,white 100%);">
+        <div class="section-header">
+            <h2>Galerie <span>Photos</span></h2>
+            <p>Inspirez-vous de nos créations</p>
+        </div>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=400&fit=crop" alt="French">
+                <div class="gallery-overlay"><h4>French Élégante</h4></div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=400&h=400&fit=crop" alt="Nail art">
+                <div class="gallery-overlay"><h4>Motifs Floraux</h4></div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=400&h=400&fit=crop" alt="Cat eye">
+                <div class="gallery-overlay"><h4>Cat Eye</h4></div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=400&h=400&fit=crop" alt="Paillettes">
+                <div class="gallery-overlay"><h4>Glamour</h4></div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1610992015732-2449b0dd2b7f?w=400&h=400&fit=crop" alt="Nude">
+                <div class="gallery-overlay"><h4>Nude Chic</h4></div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=400&fit=crop" alt="Rouge">
+                <div class="gallery-overlay"><h4>Rouge Passion</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram -->
+    <section class="insta-section">
+        <div class="section-header">
+            <h2 style="background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Sur Instagram</h2>
+            <p>Suivez nos dernières créations</p>
+        </div>
+        
+        <div class="insta-grid">
+            <div class="insta-item fade-in">
+                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=300&h=300&fit=crop" alt="Post">
+                <div class="insta-icon">📷</div>
+            </div>
+            <div class="insta-item fade-in">
+                <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=300&h=300&fit=crop" alt="Post">
+                <div class="insta-icon">📷</div>
+            </div>
+            <div class="insta-item fade-in">
+                <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=300&h=300&fit=crop" alt="Post">
+                <div class="insta-icon">📷</div>
+            </div>
+            <div class="insta-item fade-in">
+                <img src="https://images.unsplash.com/photo-1610992015732-2449b0dd2b7f?w=300&h=300&fit=crop" alt="Post">
+                <div class="insta-icon">📷</div>
+            </div>
+        </div>
+        
+        <a href="https://www.instagram.com/espace_beauty_by_dadou" target="_blank" class="btn btn-insta" style="font-size:1.1em;padding:18px 40px;">📷 Voir sur Instagram</a>
+    </section>
+'''e
+z.  t <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Nails by <span>Feriel</span></a>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#rendez-vous">RDV</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://www.instagram.com/espace_beauty_by_dadou" target="_blank" class="insta-nav">📷 Instagram</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="accueil">
+        <div>
+            <div style="display:inline-block;background:#c9a961;color:white;padding:8px 20px;border-radius:30px;font-size:0.9em;margin-bottom:20px;">✨ Onglerie Professionnelle</div>
+            <h1>Nails by <span>Feriel</span></h1>
+            <p>Sublimez vos mains avec des prestations sur mesure. Gel, vernis permanent, nail art & plus encore.</p>
+            <div>
+                <a href="#rendez-vous" class="btn btn-primary">📅 Prendre Rendez-vous</a>
+                <a href="https://www.instagram.com/espace_beauty_by_dadou" target="_blank" class="btn btn-insta">📷 Voir Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+        <div class="section-header">
+            <h2>Nos Services & <span>Tarifs</span></h2>
+            <p>Des soins professionnels à prix tunisien</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-img">💅</div>
+                <div class="service-content">
+                    <h3>Gel Capsule + VP</h3>
+                    <p>Extension complète avec capsules et vernis permanent</p>
+                    <div class="service-footer">
+                        <div class="price">35 <span>DT</span></div>
+                        <div style="color:#c9a961;">~1h30</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-img">✨</div>
+                <div class="service-content">
+                    <h3>Gel + Vernis Permanent</h3>
+                    <p>Renforcement gel sur ongle naturel avec VP</p>
+                    <div class="service-footer">
+                        <div class="price">25 <span>DT</span></div>
+                        <div style="color:#c9a961;">~1h</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-img">🦶</div>
+                <div class="service-content">
+                    <h3>Capsule + VP</h3>
+                    <p>Pose de capsules avec vernis permanent classique</p>
+                    <div class="service-footer">
+                        <div class="price">25 <span>DT</span></div>
+                        <div style="color:#c9a961;">~1h15</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-img">💎</div>
+                <div class="service-content">
+                    <h3>VP Mains</h3>
+                    <p>Manucure complète avec vernis semi-permanent</p>
+                    <div class="service-footer">
+                        <div class="price">20 <span>DT</span></div>
+                        <div style="color:#c9a961;">~45min</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-img">🌸</div>
+                <div class="service-content">
+                    <h3>VP Pieds</h3>
+                    <p>Pédicure avec vernis permanent</p>
+                    <div class="service-footer">
+                        <div class="price">25 <span>DT</span></div>
+                        <div style="color:#c9a961;">~1h</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-img">🎨</div>
+                <div class="service-content">
+                    <h3>Nail Art & Motifs</h3>
+                    <p>Designs personnalisés : strass, cat eye, french...</p>
+                    <div class="service-footer">
+                        <div class="price">2-12 <span>DT</span></div>
+                        <div style="color:#c9a961;">Selon motif</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie -->
+    <section id="galerie" style="background:linear-gradient(180deg,#faf6f1 0%,white 100%);">
+        <div class="section-header">
+            <h2>Galerie <span>Photos</span></h2>
+            <p>Inspirez-vous de nos créations</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=400&fit=crop" alt="French">
+                <div class="gallery-overlay"><h4>French Élégante</h4></div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=400&h=400&fit=crop" alt="Nail art">
+                <div class="gallery-overlay"><h4>Motifs Floraux</h4></div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=400&h=400&fit=crop" alt="Cat eye">
+                <div class="gallery-overlay"><h4>Cat Eye</h4></div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=400&h=400&fit=crop" alt="Paillettes">
+                <div class="gallery-overlay"><h4>Glamour</h4></div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1610992015732-2449b0dd2b7f?w=400&h=400&fit=crop" alt="Nude">
+                <div class="gallery-overlay"><h4>Nude Chic</h4></div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=400&fit=crop" alt="Rouge">
+                <div class="gallery-overlay"><h4>Rouge Passion</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram -->
+    <section class="insta-section">
+        <div class="section-header">
+            <h2 style="background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Sur Instagram</h2>
+            <p>Suivez nos dernières créations</p>
+        </div>
+
+        <div class="insta-grid">
+            <div class="insta-item fade-in">
+                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=300&h=300&fit=crop" alt="Post">
+                <div class="insta-icon">📷</div>
+            </div>
+            <div class="insta-item fade-in">
+                <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=300&h=300&fit=crop" alt="Post">
+                <div class="insta-icon">📷</div>
+            </div>
+            <div class="insta-item fade-in">
+                <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=300&h=300&fit=crop" alt="Post">
+                <div class="insta-icon">📷</div>
+            </div>
+            <div class="insta-item fade-in">
+                <img src="https://images.unsplash.com/photo-1610992015732-2449b0dd2b7f?w=300&h=300&fit=crop" alt="Post">
+                <div class="insta-icon">📷</div>
+            </div>
+        </div>
+
+        <a href="https://www.instagram.com/espace_beauty_by_dadou" target="_blank" class="btn btn-insta" style="font-size:1.1em;padding:18px 40px;">📷 Voir sur Instagram</a>
+    </section>    <!-- Rendez-vous SIMPLIFIÉ AVEC WHATSAPP DIRECT -->
+    <section id="rendez-vous">
+        <div class="section-header">
+            <h2>Prendre <span>Rendez-vous</span></h2>
+            <p>Choisissez votre jour et heure, puis envoyez-moi un message sur WhatsApp</p>
+        </div>
+        
+        <div class="rdv-container">
+            <div class="rdv-form fade-in">
+                <h3>📝 1. Choisissez votre créneau</h3>
+                
+                <!-- Nom et Téléphone -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nom">Nom & Prénom *</label>
+                        <input type="text" id="nom" placeholder="Votre nom complet">
+                    </div>
+                    <div class="form-group">
+                        <label for="tel">Téléphone *</label>
+                        <input type="tel" id="tel" placeholder="99 475 854">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="service">Service Souhaité *</label>
+                    <select id="service">
+                        <option value="">-- Choisir un service --</option>
+                        <option value="Gel Capsule + VP - 35 DT">Gel Capsule + VP — 35 DT</option>
+                        <option value="Gel + VP - 25 DT">Gel + Vernis Permanent — 25 DT</option>
+                        <option value="Capsule + VP - 25 DT">Capsule + Vernis Permanent — 25 DT</option>
+                        <option value="VP Mains - 20 DT">Vernis Permanent Mains — 20 DT</option>
+                        <option value="VP Pieds - 25 DT">Vernis Permanent Pieds — 25 DT</option>
+                        <option value="Nail Art - 2 a 12 DT">Nail Art & Motifs — 2 à 12 DT</option>
+                    </select>
+                </div>
+                
+                <!-- Calendrier -->
+                <div class="calendrier-container">
+                    <div class="calendrier-header">
+                        <h4>📅 Choisis ton jour</h4>
+                        <div class="cal-nav">
+                            <button type="button" onclick="changerSemaine(-1)">◀</button>
+                            <button type="button" onclick="changerSemaine(1)">▶</button>
+                        </div>
+                    </div>
+                    <div class="calendrier-grid" id="calendrierGrid"></div>
+                    <div class="status-legend">
+                        <div class="status-item"><div class="status-dot disponible"></div><span>Libre</span></div>
+                        <div class="status-item"><div class="status-dot ferme"></div><span>Fermé</span></div>
+                    </div>
+                </div>
+                
+                <!-- Heures -->
+                <div id="heuresContainer" style="display:none;">
+                    <label>⏰ Choisis ton heure</label>
+                    <div class="heures-dispo" id="heuresDispo"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notes">💅 Détails / Motif Souhaité</label>
+                    <textarea id="notes" placeholder="Couleur, longueur, cat eye, strass..."></textarea>
+                </div>
+                
+                <!-- WhatsApp Direct -->
+                <div class="whatsapp-section" id="whatsappSection">
+                    <h4>💬 2. Envoyer la réservation</h4>
+                    <p>Cliquez sur le bouton ci-dessous pour m'envoyer un message WhatsApp avec votre choix !</p>
+                    <div class="recap-text" id="recapText"></div>
+                    <a href="https://wa.me/21699475854" target="_blank" class="btn-whatsapp-large" id="whatsappBtn">
+                        📱 Envoyer sur WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+            <div class="rdv-info fade-in">
+                <div class="info-card">
+                    <h4><span>📱</span> WhatsApp Direct</h4>
+                    <p style="margin-bottom:15px;">Réserve par WhatsApp pour réponse rapide !</p>
+                    <a href="https://wa.me/21699475854" target="_blank" class="btn btn-whatsapp" style="width:100%;display:block;text-align:center;">💬 WhatsApp : 99 475 854</a>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span>📷</span> Instagram</h4>
+                    <p style="margin-bottom:15px;">Voir créations & envoyer DM</p>
+                    <a href="https://www.instagram.com/espace_beauty_by_dadou" target="_blank" class="btn btn-insta" style="width:100%;display:block;text-align:center;">📷 @espace_beauty_by_dadou</a>
+                </div>
+                
+                <div class="horaires-tunisien">
+                    <h4>🕐 Horaires</h4>
+                    <div class="horaire-item"><span>Mardi</span><span>11h-19h</span></div>
+                    <div class="horaire-item"><span>Mercredi</span><span>11h-19h</span></div>
+                    <div class="horaire-item"><span>Jeudi</span><span>11h-19h</span></div>
+                    <div class="horaire-item"><span>Vendredi</span><span>11h-19h</span></div>
+                    <div class="horaire-item"><span>Samedi</span><span>11h-19h</span></div>
+                    <div class="horaire-item"><span>Dimanche</span><span>11h-19h</span></div>
+                    <div class="horaire-item"><span>Lundi</span><span class="ferme">Fermé</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section" id="contact">
+        <div class="section-header">
+            <h2>Contactez <span style="color:#f0e6d3;">Nous</span></h2>
+            <p style="color:#aaa;">Toutes nos coordonnées</p>
+        </div>
+        
+        <div class="contact-grid">
+            <div class="contact-card fade-in whatsapp-card">
+                <div class="contact-icon">💬</div>
+                <h3>WhatsApp</h3>
+                <a href="https://wa.me/21699475854">99 475 854</a>
+            </div>
+            
+            <div class="contact-card fade-in insta-card">
+                <div class="contact-icon">📷</div>
+                <h3>Instagram</h3>
+                <a href="https://www.instagram.com/espace_beauty_by_dadou">@espace_beauty_by_dadou</a>
+            </div>
+            
+            <div class="contact-card fade-in">
+                <div class="contact-icon">📞</div>
+                <h3>Téléphone</h3>
+                <a href="tel:+21699475854">99 475 854</a>
+            </div>
+            
+            <div class="contact-card fade-in">
+                <div class="contact-icon">📍</div>
+                <h3>Adresse</h3>
+                <p>Tunisie</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>💅 <strong>Nails by Feriel</strong> — Onglerie Tunisie</p>
+        <p style="margin-top:10px;"><a href="https://www.instagram.com/espace_beauty_by_dadou">📷 Instagram</a> | <a href="https://wa.me/21699475854">💬 WhatsApp</a></p>
+        <p style="margin-top:10px;font-size:0.9em;opacity:0.7;">© 2026 Nails by Feriel</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Variables globales
+        let semaineActuelle = 0;
+        let jourSelectionne = null;
+        let heureSelectionnee = null;
+        
+        const HEURES = ['11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00'];
+        const JOURS_OUVERTS = [0,2,3,4,5,6];
+        const JOURS_NOMS = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+        const JOURS_ABR = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
+
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', function() {
+            genererCalendrier();
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, {threshold:0.1});
+            
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        });
+
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Calendrier
+        function genererCalendrier() {
+            const grid = document.getElementById('calendrierGrid');
+            grid.innerHTML = '';
+            
+            const labels = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
+            labels.forEach(label => {
+                const div = document.createElement('div');
+                div.className = 'cal-jour-label';
+                div.textContent = label;
+                grid.appendChild(div);
+            });
+            
+            const auj = new Date();
+            const debut = new Date(auj);
+            debut.setDate(auj.getDate() + (semaineActuelle * 7) - auj.getDay());
+            
+            for(let i=0; i<<35; i++) {
+                const date = new Date(debut);
+                date.setDate(debut.getDate() + i);
+                
+                const jourSem = date.getDay();
+                const dateStr = date.toISOString().split('T')[0];
+                const estOuvert = JOURS_OUVERTS.includes(jourSem);
+                const estPasse = date < new Date(auj.setHours(0,0,0,0));
+                
+                const btn = document.createElement('div');
+                btn.className = 'cal-jour';
+                
+                if(estPasse || !estOuvert) {
+                    btn.classList.add('ferme');
+                } else {
+                    btn.onclick = () => selectJour(btn, dateStr, JOURS_NOMS[jourSem], date.getDate());
+                }
+                
+                btn.innerHTML = `<span class="jour-num">${date.getDate()}</span><span class="jour-nom">${JOURS_ABR[jourSem]}</span>`;
+                grid.appendChild(btn);
+            }
+        }
+
+        function changerSemaine(dir) {
+            semaineActuelle += dir;
+            if(semaineActuelle < 0) semaineActuelle = 0;
+            genererCalendrier();
+        }
+
+        function selectJour(btn, dateStr, nomJour, numJour) {
+            document.querySelectorAll('.cal-jour').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            jourSelectionne = { date: dateStr, nom: nomJour, num: numJour };
+            
+            genererHeures();
+            document.getElementById('heuresContainer').style.display = 'block';
+            updateWhatsApp();
+        }
+
+        function genererHeures() {
+            const container = document.getElementById('heuresDispo');
+            container.innerHTML = '';
+            
+            HEURES.forEach(heure => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'heure-btn';
+                btn.textContent = heure;
+                btn.onclick = () => selectHeure(btn, heure);
+                container.appendChild(btn);
+            });
+        }
+
+        function selectHeure(btn, heure) {
+            document.querySelectorAll('.heure-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            heureSelectionnee = heure;
+            updateWhatsApp();
+        }
+
+        function updateWhatsApp() {
+            if(jourSelectionne && heureSelectionnee) {
+                const nom = document.getElementById('nom').value || 'Non renseigné';
+                const tel = document.getElementById('tel').value || 'Non renseigné';
+                const service = document.getElementById('service');
+                const serviceText = service.value || 'Non renseigné';
+                const notes = document.getElementById('notes').value || 'Aucun';
+                
+                const recap = `📅 Jour : ${jourSelectionne.nom} ${jourSelectionne.num}
+⏰ Heure : ${heureSelectionnee}
+👤 Nom : ${nom}
+📱 Tél : ${tel}
+💅 Service : ${serviceText}
+📝 Détails : ${notes}`;
+                
+                document.getElementById('recapText').textContent = recap;
+                
+                const msg = `✨ Bonjour ! Je voudrais prendre rendez-vous chez Nails by Feriel ✨
+
+📅 Jour : ${jourSelectionne.nom} ${jourSelectionne.num}
+⏰ Heure : ${heureSelectionnee}
+👤 Nom : ${nom}
+📱 Tél : ${tel}
+💅 Service : ${serviceText}
+📝 Détails : ${notes}
+
+Merci ! ❤️`;
+                
+                const whatsappUrl = `https://wa.me/21699475854?text=${encodeURIComponent(msg)}`;
+                document.getElementById('whatsappBtn').href = whatsappUrl;
+                
+                document.getElementById('whatsappSection').classList.add('active');
+            }
+        }
+
+        // Mettre à jour WhatsApp quand on change les infos
+        document.getElement

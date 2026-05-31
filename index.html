@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nails by Feriel - Onglerie Tunisie</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --rose-gold: #e8b4b8;
+            --rose-fonce: #d4a5a5;
+            --or: #c9a961;
+            --or-clair: #f0e6d3;
+            --noir: #2c2c2c;
+            --blanc: #ffffff;
+            --beige: #faf6f1;
+            --taupe: #8b7355;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--noir);
+            background: var(--beige);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .logo-text {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 246, 241, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            box-shadow: 0 2px 30px rgba(0,0,0,0.08);
+            padding: 12px 0;
+            border-bottom: 1px solid var(--or-clair);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--or);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo-text {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: var(--taupe);
+            letter-spacing: 1px;
+        }
+
+        .logo-text span {
+            color: var(--rose-fonce);
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--taupe);
+            font-weight: 500;
+            font-size: 0.95em;
+            transition: all 0.3s;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85em;
+        }
+
+        .nav-links a:hover {
+            color: var(--rose-fonce);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--or);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .insta-nav {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 600 !important;
+        }
+
+        .insta-nav::after {
+            display: none !important;
+        }
+
+        .insta-nav:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(220, 39, 67, 0.3);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--taupe);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 74px;
+            min-height: 92vh;
+            background: linear-gradient(135deg, var(--beige) 0%, var(--or-clair) 50%, var(--rose-gold) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a961' fill-opacity='0.05'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            animation: float 25s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-50%, -50%); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 40px 20px;
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--or);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 3.8em;
+            margin-bottom: 20px;
+            color: var(--taupe);
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .hero h1 span {
+            color: var(--rose-fonce);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.25em;
+            margin-bottom: 35px;
+            color: var(--taupe);
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1em;
+            transition: all 0.4s;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: var(--taupe);
+            color: white;
+            box-shadow: 0 10px 30px rgba(139, 115, 85, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--rose-fonce);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 165, 165, 0.4);
+        }
+
+        .btn-insta {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white;
+            box-shadow: 0 10px 30px rgba(220, 39, 67, 0.3);
+        }
+
+        .btn-insta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(220, 39, 67, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--taupe);
+            border: 2px solid var(--taupe);
+        }
+
+        .btn-outline:hover {
+            background: var(--taupe);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            display: inline-block;
+            color: var(--or);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 2.8em;
+            color: var(--taupe);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .section-title span {
+            color: var(--rose-fonce);
+            font-style: italic;
+        }
+
+        .section-subtitle {
+            color: #888;
+            font-size: 1.1em;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* Services */
+        .services-section {
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--beige);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s;
+            border: 1px solid var(--or-clair);
+            position: relative;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--or), var(--rose-fonce));
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+        }
+
+        .service-img {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--or);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        .service-content {
+            padding: 30px;
+        }
+
+        .service-content h3 {
+            font-size: 1.4em;
+            color: var(--taupe);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .service-content p {
+            color: #777;
+            font-size: 0.95em;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .service-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--or-clair);
+        }
+
+        .price {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: var(--rose-fonce);
+        }
+
+        .price span {
+            font-size: 0.7em;
+            color: #999;
+            font-weight: 400;
+        }
+
+        .duration {
+            color: var(--or);
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        /* Galerie */
+        .gallery-section {
+            background: linear-gradient(180deg, var(--beige) 0%, white 100%);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.15);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent 40%, rgba(44,44,44,0.8));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 25px;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay h4 {
+            color: white;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .gallery-overlay p {
+            color: var(--or-clair);
+            font-size: 0.9em;
+        }
+
+        /* Instagram Feed Section */
+        .insta-section {
+            background: linear-gradient(135deg, #faf6f1 0%, #f0e6d3 100%);
+            text-align: center;
+        }
+
+        .insta-section .section-title {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .insta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 40px 0;
+        }
+
+        .insta-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .insta-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .insta-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .insta-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(220, 39, 67, 0.8);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+        }
+
+        .insta-cta {
+            margin-top: 30px;
+        }
+
+        /* Rendez-vous */
+        .rdv-section {
+            background: white;
+        }
+
+        .rdv-container {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .rdv-form-wrapper {
+            background: var(--beige);
+            padding: 45px;
+            border-radius: 25px;
+            border: 1px solid var(--or-clair);
+        }
+
+        .rdv-form-wrapper h3 {
+            font-size: 1.8em;
+            color: var(--taupe);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--taupe);
+            font-weight: 500;
+            font-size: 0.95em;
+        }
+
+        .form-group label .required {
+            color: var(--rose-fonce);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--or-clair);
+            border-radius: 12px;
+            font-size: 1em;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            background: white;
+            color: var(--taupe);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--or);
+            box-shadow: 0 0 0 4px rgba(201, 169, 97, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .rdv-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--or-clair);
+            transition: all 0.3s;
+        }
+
+        .info-card:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            transform: translateY(-5px);
+        }
+
+        .info-card h4 {
+            color: var(--taupe);
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .info-card h4 span {
+            font-size: 1.5em;
+        }
+
+        /* Horaires tunisiens */
+        .horaires-tunisien {
+            background: linear-gradient(135deg, var(--taupe) 0%, #6b5b45 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+
+        .horaires-tunisien h4 {
+            text-align: center;
+            font-size: 1.3em;
+            margin-bottom: 25px;
+            color: var(--or-clair);
+        }
+
+        .horaire-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.95em;
+        }
+
+        .horaire-item:last-child {
+            border-bottom: none;
+        }
+
+        .horaire-item .jour {
+            font-weight: 500;
+        }
+
+        .horaire-item .heures {
+            color: var(--or-clair);
+            font-weight: 600;
+        }
+
+        .horaire-item .ferme {
+            color: #ff9999;
+            font-weight: 600;
+        }
+
+        /* Jours disponibles */
+        .jours-dispo {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .jour-btn {
+            padding: 12px;
+            border: 2px solid var(--or-clair);
+            border-radius: 12px;
+            background: white;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9em;
+        }
+
+        .jour-btn:hover, .jour-btn.active {
+            background: var(--taupe);
+            color: white;
+            border-color: var(--taupe);
+        }
+
+        .jour-btn .jour-nom {
+            font-weight: 600;
+            display: block;
+        }
+
+        .jour-btn .jour-date {
+            font-size: 0.8em;
+            opacity: 0.8;
+        }
+
+        /* Heures disponibles */
+        .heures-dispo {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .heure-btn {
+            padding: 10px;
+            border: 2px solid var(--or-clair);
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .heure-btn:hover, .heure-btn.active {
+            background: var(--or);
+            color: white;
+            border-color: var(--or);
+        }
+
+        .heure-btn.indisponible {
+            opacity: 0.4;
+            cursor: not-allowed;
+            text-decoration: line-through;
+        }
+
+        /* Contact */
+        .contact-section {
+            background: var(--noir);
+            color: white;
+            padding: 100px 25px;
+        }
+
+        .contact-section .section-title {
+            color: var(--or-clair);
+        }
+
+        .contact-section .section-subtitle {
+            color: #aaa;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.05);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(201, 169, 97, 0.2);
+            transition: all 0.4s;
+        }
+
+        .contact-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-8px);
+            border-color: var(--or);
+        }
+
+        .contact-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .contact-card h3 {
+            color: var(--or);
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .contact-card a, .contact-card p {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 1.05em;
+        }
+
+        .contact-card a:hover {
+            color: var(--rose-gold);
+        }
+
+        .whatsapp-card {
+            background: linear-gradient(135deg, rgba(37, 211, 102, 0.1) 0%, rgba(37, 211, 102, 0.05) 100%);
+            border-color: rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-card:hover {
+            border-color: #25d366;
+        }
+
+        .insta-card {
+            background: linear-gradient(135deg, rgba(240, 148, 51, 0.1) 0%, rgba(188, 24, 136, 0.05) 100%);
+            border-color: rgba(220, 39, 67, 0.3);
+        }
+
+        .insta-card:hover {
+            border-color: #dc2743;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #777;
+            text-align: center;
+            padding: 40px 25px;
+            border-top: 1px solid rgba(201, 169, 97, 0.2);
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer .heart {
+            color: var(--rose-fonce);
+        }
+
+        footer a {
+            color: var(--or);
+            text-decoration: none;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 25px;
+            background: var(--taupe);
+            color: white;
+            padding: 25px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            z-index: 2000;
+            transform: translateX(450px);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            max-width: 380px;
+            border-left: 4px solid var(--or);
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification h4 {
+            margin-bottom: 8px;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .notification p {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--beige);
+                flex-direction: column;
+                padding: 25px;
+                gap: 20px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero {
+                margin-top: 74px;
+                min-height: 80vh;
+            }
+
+            .hero h1 {
+                font-size: 2.4em;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .rdv-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2.2em;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .jours-dispo {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .heures-dispo {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--beige);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--or);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--taupe);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=100&h=100&fit=crop" alt="Logo" class="logo-img">
+                <span class="logo-text">Nails by <span>Feriel</span></span>
+            </a>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#rendez-vous">Rendez-vous</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://www.instagram.com/espace_beauty_by_dadou?igsh=NDhnOWp0NmZwbDhm&utm_source=qr" target="_blank" class="insta-nav">📷 Instagram</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="accueil">
+        <div class="hero-content">
+            <div class="hero-badge">✨ Onglerie Professionnelle</div>
+            <h1>Nails by <span>Feriel</span></h1>
+            <p>Sublimez vos mains avec des prestations sur mesure. Gel, vernis permanent, nail art & plus encore dans une ambiance chic et relaxante.</p>
+            <div class="hero-buttons">
+                <a href="#rendez-vous" class="btn btn-primary">📅 Prendre Rendez-vous</a>
+                <a href="https://www.instagram.com/espace_beauty_by_dadou?igsh=NDhnOWp0NmZwbDhm&utm_source=qr" target="_blank" class="btn btn-insta">📷 Voir sur Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services-section" id="services">
+        <div class="section-header">
+            <div class="section-label">Nos Prestations</div>
+            <h2 class="section-title">Services & <span>Tarifs</span></h2>
+            <p class="section-subtitle">Des soins professionnels adaptés à tous les styles, à prix tunisien</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=300&fit=crop" alt="Gel capsule vernis permanent">
+                    <span class="service-badge">⭐ Populaire</span>
+                </div>
+                <div class="service-content">
+                    <h3>Gel Capsule + Vernis Permanent</h3>
+                    <p>Extension complète avec capsules et finition vernis permanent longue tenue. L'option idéale pour des ongles parfaits.</p>
+                    <div class="service-footer">
+                        <div class="price">35 <span>DT</span></div>
+                        <div class="duration">⏱️ ~1h30</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=400&h=300&fit=crop" alt="Gel vernis permanent">
+                </div>
+                <div class="service-content">
+                    <h3>Gel + Vernis Permanent</h3>
+                    <p>Renforcement gel sur ongle naturel avec vernis permanent. Brillance et tenue assurées.</p>
+                    <div class="service-footer">
+                        <div class="price">25 <span>DT</span></div>
+                        <div class="duration">⏱️ ~1h</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=400&h=300&fit=crop" alt="Capsule vernis permanent">
+                </div>
+                <div class="service-content">
+                    <h3>Capsule + Vernis Permanent</h3>
+                    <p>Pose de capsules avec vernis permanent classique. Extension et couleur en une seule prestation.</p>
+                    <div class="service-footer">
+                        <div class="price">25 <span>DT</span></div>
+                        <div class="duration">⏱️ ~1h15</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=400&h=300&fit=crop" alt="Vernis permanent mains">
+                </div>
+                <div class="service-content">
+                    <h3>Vernis Permanent Mains</h3>
+                    <p>Manucure complète avec vernis semi-permanent. Tenue 2-3 semaines sans écaillage.</p>
+                    <div class="service-footer">
+                        <div class="price">20 <span>DT</span></div>
+                        <div class="duration">⏱️ ~45min</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1610992015732-2449b0dd2b7f?w=400&h=300&fit=crop" alt="Vernis permanent pieds">
+                </div>
+                <div class="service-content">
+                    <h3>Vernis Permanent Pieds</h3>
+                    <p>Pédicure avec vernis permanent. Des pieds soignés et sublimés pour longtemps.</p>
+                    <div class="service-footer">
+                        <div class="price">25 <span>DT</span></div>
+                        <div class="duration">⏱️ ~1h</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=300&fit=crop" alt="Nail art motifs">
+                    <span class="service-badge">🎨 Créatif</span>
+                </div>
+                <div class="service-content">
+                    <h3>Nail Art & Motifs</h3>
+                    <p>Designs personnalisés : strass, motifs, french, cat eye... Exprimez votre style unique.</p>
+                    <div class="service-footer">
+                        <div class="price">2 - 12 <span>DT</span></div>
+                        <div class="duration">⏱️ Selon motif</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie -->
+    <section class="gallery-section" id="galerie">
+        <div class="section-header">
+            <div class="section-label">Nos Créations</div>
+            <h2 class="section-title">Galerie <span>Photos</span></h2>
+            <p class="section-subtitle">Inspirez-vous de nos réalisations et trouvez votre prochain style</p>
+        </div>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=400&fit=crop" alt="French manucure">
+                <div class="gallery-overlay">
+                    <h4>French Élégante</h4>
+                    <p>Classique intemporelle</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=400&h=400&fit=crop" alt="Nail art floral">
+                <div class="gallery-overlay">
+                    <h4>Motifs Floraux</h4>
+                    <p>Délicat & féminin</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=400&h=400&fit=crop" alt="Cat eye nails">
+                <div class="gallery-overlay">
+                    <h4>Cat Eye Magnétique</h4>
+                    <p>Effet 3D unique</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=400&h=400&fit=crop" alt="Paillettes glamour">
+                <div class="gallery-overlay">
+                    <h4>Paillettes & Glamour</h4>
+                    <p>Pour les soirées</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1610992015732-2449b0dd2b7f?w=400&h=400&fit=crop" alt="Nude chic">
+                <div class="gallery-overlay">
+                    <h4>Nude & Naturel</h4>
+                    <p>Chic discret</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=400&fit=crop" alt="Rouge passion">
+                <div class="gallery-overlay">
+                    <h4>Rouge Passion</h4>
+                    <p>Osez l'audace</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="insta-section">
+        <div class="section-header">
+            <div class="section-label">Suivez-Nous</div>
+            <h2 class="section-title">Sur <span>Instagram</span></h2>
+            <p class="section-subtitle">Découvrez nos dernières créations et tendances en temps réel</p>
+        </div>
+        
+        <div class="insta-grid">
+            <div class="insta-item fade-in">
+                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=300&h=300&fit=crop" alt="Instagram post">
+                <div class="insta-icon">📷</div>
+            </div>
+            <div class="insta-item fade-in">
+                <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=300&h=300&fit=crop" alt="Instagram post">
+                <div class="insta-icon">📷</div>
+            </div>
+            <div class="insta-item fade-in">
+                <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=300&h=300&fit=crop" alt="Instagram post">
+                <div class="insta-icon">📷</div>
+            </div>
+            <div class="insta-item fade-in">
+                <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=300&h=300&fit=crop" alt="Instagram post">
+                <div class="insta-icon">📷</div>
+            </div>
+        </div>
+        
+        <div class="insta-cta">
+            <a href="https://www.instagram.com/espace_beauty_by_dadou?igsh=NDhnOWp0NmZwbDhm&utm_source=qr" target="_blank" class="btn btn-insta" style="font-size: 1.1em; padding: 18px 50px;">
+                📷 Voir Toutes Nos Photos sur Instagram
+            </a>
+        </div>
+    </section>
+
+    <!-- Rendez-vous -->
+    <section class="rdv-section" id="rendez-vous">
+        <div class="section-header">
+            <div class="section-label">Réservez</div>
+            <h2 class="section-title">Prendre <span>Rendez-vous</span></h2>
+            <p class="section-subtitle">Choisissez votre jour et heure parmi nos disponibilités</p>
+        </div>
+        
+        <div class="rdv-container">
+            <div class="rdv-form-wrapper fade-in">
+                <h3>📝 Formulaire de Réservation</h3>
+                <form id="rdvForm" onsubmit="handleSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nom">Nom & Prénom <span class="required">*</span></label>
+                            <input type="text" id="nom" name="nom" required placeholder="Votre nom complet">
+                        </div>
+                        <div class="form-group">
+                            <label for="tel">Téléphone <span class="required">*</span></label>
+                            <input type="tel" id="tel" name="tel" required placeholder="99 475 854" value="99 475 854">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service Souhaité <span class="required">*</span></label>
+                        <select id="service" name="service" required>
+                            <option value="">-- Choisir un service --</option>
+                            <option value="gel-capsule">Gel Capsule + Vernis Permanent — 35 DT</option>
+                            <option value="gel-vp">Gel + Vernis Permanent — 25 DT</option>
+                            <option value="capsule-vp">Capsule + Vernis Permanent — 25 DT</option>
+                            <option value="vp-mains">Vernis Permanent Mains — 20 DT</option>
+                            <option value="vp-pieds">Vernis Permanent Pieds — 25 DT</option>
+                            <option value="motif">Nail Art & Motifs — 2 à 12 DT</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>📅 Choisissez Votre Jour <span class="required">*</span></label>
+                        <div class="jours-dispo" id="joursDispo">
+                            <!-- Généré par JS -->
+                        </div>
+                        <input type="hidden" id="jourSelected" name="jour" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>⏰ Choisissez Votre Heure <span class="required">*</span></label>
+                        <div class="heures-dispo" id="heuresDispo">
+                            <!-- Généré par JS -->
+                        </div>
+                        <input type="hidden" id="heureSelected" name="heure" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">💅 Détails / Motif Souhaité</label>
+                        <textarea id="notes" name="notes" placeholder="Couleur préférée, longueur, type de motif (cat eye, strass, french...)"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 10px;">
+                        ✅ Confirmer ma Réservation
+                    </button>
+                </form>
+            </div>
+            
+            <div class="rdv-info fade-in">
+                <div class="info-card">
+                    <h4><span>📱</span> WhatsApp Direct</h4>
+                    <p style="margin-bottom: 15px;">Réservez directement par WhatsApp pour une réponse immédiate !</p>
+                    <a href="https://wa.me/21699475854" target="_blank" class="btn" style="width: 100%; justify-content: center; background: #25d366; color: white;">
+                        💬 Contacter sur WhatsApp
+                    </a>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span>📷</span> Instagram</h4>
+                    <p style="margin-bottom: 15px;">Voir nos créations et envoyer un DM pour réserver</p>
+                    <a href="https://www.instagram.com/espace_beauty_by_dadou?igsh=NDhnOWp0NmZwbDhm&utm_source=qr" target="_blank" class="btn btn-insta" style="width: 100%; justify-content: center;">
+                        📷 @espace_beauty_by_dadou
+                    </a>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span>💡</span> Conseils</h4>
+                    <ul style="list-style: none; color: #666; font-size: 0.95em; line-height: 2;">
+                        <li>✓ Arrivez 5min avant votre RDV</li>
+                        <li>✓ Retirez ancien vernis si possible</li>
+                        <li>✓ Précisez allergies cutanées</li>
+                        <li>✓ Annulation gratuite 24h avant</li>
+                    </ul>
+                </div>
+                
+                <div class="horaires-tunisien">
+                    <h4>🕐 Horaires d'Ouverture</h4>
+                    <div class="horaire-item">
+                        <span class="jour">Mardi</span>
+                        <span class="heures">11h00 - 19h00</span>
+                    </div>
+                    <div class="horaire-item">
+                        <span class="jour">Mercredi</span>
+                        <span class="heures">11h00 - 19h00</span>
+                    </div>
+                    <div class="horaire-item">
+                        <span class="jour">Jeudi</span>
+                        <span class="heures">11h00 - 19h00</span>
+                    </div>
+                    <div class="horaire-item">
+                        <span class="jour">Vendredi</span>
+                        <span class="heures">11h00 - 19h00</span>
+                    </div>
+                    <div class="horaire-item">
+                        <span class="jour">Samedi</span>
+                        <span class="heures">11h00 - 19h00</span>
+                    </div>
+                    <div class="horaire-item">
+                        <span class="jour">Dimanche</span>
+                        <span class="heures">11h00 - 19h00</span>
+                    </div>
+                    <div class="horaire-item">
+                        <span class="jour">Lundi</span>
+                        <span class="ferme">Fermé</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section" id="contact">
+        <div class="section-header">
+            <div class="section-label" style="color: var(--or);">Contact</div>
+            <h2 class="section-title">Contactez <span>Nous</span></h2>
+            <p class="section-subtitle">Toutes nos coordonnées pour nous joindre facilement</p>
+        </div>
+        
+        <div class="contact-grid">
+            <div class="contact-card fade-in whatsapp-card">
+                <div class="contact-icon">💬</div>
+                <h3>WhatsApp</h3>
+                <a href="https://wa.me/21699475854" target="_blank">99 475 854</a>
+                <p style="margin-top: 10px; font-size: 0.9em;">Réponse rapide garantie !</p>
+            </div>
+            
+            <div class="contact-card fade-in insta-card">
+                <div class="contact-icon">📷</div>
+                <h3>Instagram</h3>
+                <a href="https://www.instagram.com/espace_beauty_by_dadou?igsh=NDhnOWp0NmZwbDhm&utm_source=qr" target="_blank">@espace_beauty_by_dadou</a>
+                <p style="margin-top: 10px; font-size: 0.9em;">Suivez nos créations !</p>
+            </div>
+            
+            <div class="contact-card fade-in">
+                <div class="contact-icon">📞</div>
+                <h3>Téléphone</h3>
+                <a href="tel:+21699475854">99 475 854</a>
+                <p style="margin-top: 10px; font-size: 0.9em;">Disponible pendant les horaires</p>
+            </div>
+            
+            <div class="contact-card fade-in">
+                <div class="contact-icon">📍</div>
+                <h3>Adresse</h3>
+                <p>Tunisie</p>
+                <p style="margin-top: 5px; font-size: 0.9em;">(Adresse exacte sur demande)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>💅 <strong>Nails by Feriel</strong> — Onglerie Professionnelle en Tunisie</p>
+        <p>Fait avec <span class="heart">❤️</span> pour sublimer vos ongles</p>
+        <p style="margin-top: 15px;">
+            <a href="https://www.instagram.com/espace_beauty_by_dadou?igsh=NDhnOWp0NmZwbDhm&utm_source=qr" target="_blank">📷 Instagram</a> | 
+            <a href="https://wa.me/21699475854" target="_blank">💬 WhatsApp</a>
+        </p>
+        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.7;">© 2026 Nails by Feriel — Tous droits réservés</p>
+    </footer>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <h4>✅ Réservation Envoyée !</h4>
+        <p>Nous vous contacterons sur WhatsApp pour confirmer votre rendez-vous.</p>
+    </div>
+
+    <script>
+        // Menu mobile
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Système de jours disponibles (Mardi à Dimanche)
+        const joursSemaine = [
+            { nom: 'Mardi', value: 'mardi' },
+            { nom: 'Mercredi', value: 'mercredi' },
+            { nom: 'Jeudi', value: 'jeudi' },
+            { nom: 'Vendredi', value: 'vendredi' },
+            { nom: 'Samedi', value: 'samedi' },
+            { nom: 'Dimanche', value: 'dimanche' }
+        ];
+
+        // Générer les prochains jours disponibles
+        function genererJoursDisponibles() {
+            const container = document.getElementById('joursDispo');
+            const aujourdHui = new Date();
+            const joursGenere = [];
+            
+            // Générer les 4 prochaines semaines de disponibilités
+            for (let semaine = 0; semaine < 4; semaine++) {
+                joursSemaine.forEach((jour, index) => {
+                    const date = new Date(aujourdHui);
+                    const jourActuel = date.getDay(); // 0=Dimanche, 1=Lundi...
+                    
+                    // Calculer le prochain jour correspondant
+                    let decalage = (index + 2 - jourActuel + 7) % 7; // +2 car Mardi=2
+                    if (decalage <= 0 && semaine === 0) decalage += 7;
+                    decalage += semaine * 7;
+                    
+                    date.setDate(date.getDate() + decalage);
+                    
+                    const dateStr = date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
+                    const fullDate = date.toISOString().split('T')[0];
+                    
+                    if (!joursGenere.find(j => j.date === fullDate)) {
+                        joursGenere.push({
+                            nom: jour.nom,
+                            date: fullDate,
+                            display: dateStr
+                        });
+                    }
+                });
+            }
+            
+            // Afficher les 12 premiers jours
+            joursGenere.slice(0, 12).forEach((jour, index) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'jour-btn';
+                btn.innerHTML = `<span class="jour-nom">${jour.nom}</span><span class="jour-date">${jour.display}</span>`;
+                btn.onclick = () => selectJour(btn, jour.nom, jour.date);
+                container.appendChild(btn);
+            });
+        }
+
+        let jourSelectionne = null;
+        let heureSelectionnee = null;
+
+        function selectJour(btn, nom, date) {
+            document.querySelectorAll('.jour-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            jourSelectionne = { nom, date };
+            document.getElementById('jourSelected').value = `${nom} ${date}`;
+            genererHeuresDisponibles();
+        }
+
+        // Heures disponibles : 11h, 12h, 13h, 14h, 15h, 16h, 17h, 18h
+        const heuresDisponibles = ['11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'];
+
+        function genererHeuresDisponibles() {
+            const container = document.getElementById('heuresDispo');
+            container.innerHTML = '';
+            
+            heuresDisponibles.forEach(heure => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'heure-btn';
+                btn.textContent = heure;
+                
+                // Simuler quelques heures indisponibles aléatoirement
+                if (Math.random() > 0.7) {
+                    btn.classList.add('indisponible');
+                    btn.title = 'Déjà réservé';
+                    btn.disabled = true;
+                } else {
+                    btn.onclick = () => selectHeure(btn, heure);
+                }
+                
+                container.appendChild(btn);
+            });
+        }
+
+        function selectHeure(btn, heure) {
+            document.querySelectorAll('.heure-btn').forEach(b => {
+                if (!b.disabled) b.classList.remove('active');
+            });
+            btn.classList.add('active');
+            heureSelectionnee = heure;
+            document.getElementById('heureSelected').value = heure;
+        }
+
+        // Initialiser les jours
+        genererJoursDisponibles();
+
+        // Gestion du formulaire
+        function handleSubmit(e) {
+            e.preventDefault();
+            
+            if (!jourSelectionne) {
+                alert('📅 Veuillez sélectionner un jour !');
+                return;
+            }
+            
+            if (!heureSelectionnee) {
+                alert('⏰ Veuillez sélectionner une heure !');
+                return;
+            }
+            
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+            
+            // Construire le message WhatsApp
+            const serviceText = document.getElementById('service').options[document.getElementById('service').selectedIndex].text;
+            const message = `✨ *Nouvelle Réservation Nails by Feriel* ✨\n\n` +
+                `👤 *Nom:* ${data.nom}\n` +
+                `📱 *Téléphone:* ${data.tel}\n` +
+                `💅 *Service:* ${serviceText}\n` +
+                `📅 *Jour:* ${jourSelectionne.nom} (${jourSelectionne.date})\n` +
+                `⏰ *Heure:* ${heureSelectionnee}\n` +
+                `📝 *Détails:* ${data.notes || 'Aucun'}\n\n` +
+                `Merci ! ❤️`;
+            
+            // Afficher notification
+            const notif = document.getElementById('notification');
+            notif.classList.add('show');
+            
+            // Ouvrir WhatsApp après 1.5s
+            setTimeout(() => {
+                window.open(`https://wa.me/21699475854?text=${encodeURIComponent(message)}`, '_blank');
+            }, 1500);
+            
+            // Masquer notification
+            setTimeout(() => {
+                notif.classList.remove('show');
+            }, 6000);
+            
+            e.target.reset();
+            document.querySelectorAll('.jour-btn, .heure-btn').forEach(b => b.classList.remove('active'));
+            jourSelectionne = null;
+            heureSelectionnee = null;
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.pageYOffset > 50) {
+                nav.style.boxShadow = '0 2px 30px rgba(0,0,0,0.12)';
+            } else {
+                nav.style.boxShadow = '0 2px 30px rgba(0,0,0,0.08)';
+            }
+        });
+    </script>
+
+</body>
+</html>
